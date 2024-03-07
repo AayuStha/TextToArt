@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Figlet art</title>
+</head>
+<body>
+    <h1>Please write something that you want to change in figlet art</h1>
+    <form action="/" method="POST">
+        <textarea name="user" cols="50 " rows="5"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+    <% if (typeof output !== 'undefined') { %>
+        <pre><%= output %></pre>
+    <% } %>
+
+    
+</body>
+</html>
