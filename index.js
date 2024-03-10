@@ -6,7 +6,11 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
-const port = 3000;
+const port = 4000;
+
+app.get('/', function (req, res) {
+    res.render('index');
+});
 
 app.post('/', function (req, res) {
     let user = req.body.user;
@@ -16,9 +20,11 @@ app.post('/', function (req, res) {
             console.dir(err);
             return;
         }
-        res.render('index', { user: data, output: data });
+    res.render('index', { user: data, output: data });
     });
+
 });
+
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
