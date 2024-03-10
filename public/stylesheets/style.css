@@ -13,7 +13,7 @@ body::before {
     content: "made by aayustha";
     position: fixed;
     top: 95%;
-    left: 5%;
+    left: 16%;
     transform: translate(-50%, -50%);
     font-size: 1rem;
     color: rgba(7, 73, 16, 0.312);
@@ -39,7 +39,7 @@ pre {
     max-width: 80%;
     overflow-x: auto;
 }
-button {
+button,.download-btn {
     background-color: #4CAF50; /* Green */
     border: none;
     color: white;

@@ -12,8 +12,11 @@
         <textarea name="user" cols="50 " rows="5"></textarea>
         <button type="submit">Submit</button>
     </form>
+    
+    
     <% if (typeof output !== 'undefined') { %>
         <pre><%= output %></pre>
+        <a href="/<%= filename %>" download class="download-btn">Download</a>
     <% } %>
 
     

@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const figlet = require('figlet');
+const fs = require('fs');
+const path = require('path');
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -20,12 +22,12 @@ app.post('/', function (req, res) {
             console.dir(err);
             return;
         }
-    res.render('index', { user: data, output: data });
+        const filename = Date.now() + '.txt';
+        fs.writeFileSync(path.join(__dirname, 'public', filename), data);
+        res.render('index', { user: data, output: data, filename: filename });
     });
-
 });
-
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
-  });
+});
