@@ -3,12 +3,15 @@ const bodyParser = require('body-parser');
 const figlet = require('figlet');
 const fs = require('fs');
 const path = require('path');
+require('dotenv').config();
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
-const port = 8080;
+
+const port = process.env.PORT;
+
 
 app.get('/', function (req, res) {
     res.render('index');
