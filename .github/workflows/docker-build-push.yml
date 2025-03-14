@@ -3,7 +3,7 @@ name: Build and Push Docker Image
 on:
   push:
     branches:
-      - main  # This will trigger on changes to the main branch
+      - main  # This will trigger on changes to main branch
     paths:
       - Dockerfile  # Triggers only when Dockerfile changes
 
